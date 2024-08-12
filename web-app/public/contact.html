@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Kavach - Secure Your Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">              
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">      
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">            
+    <link href="https://fonts.googleapis.com/css2?family=Foldit&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap" rel="stylesheet">
+    <title>Contact us</title>
+</head>
+
+<body>
+    <!------------------------------------------------------------------- Navbar starts --------------------------------------------------------------- -->
+    <div class="container mx-auto mt-5 px-5 py-5">
+        <div class="ml-8 md:flex md:flex-row md:justify-between text-center text-sm sm:text-base">
+          <div class="flex flex-row justify-center">
+            <div class="">
+                <a href="index.html">
+                    <img
+                      class="shadow-xl mx-auto w-56 hover:shadow-2xl transition duration-300 ease-in-out rounded-lg"
+                      src="images/web_kavach_logo.png"
+                      alt="logo"
+                    />
+                </a>
+            </div>            
+          </div>
+          <div class="mx-12 px-5 py-5">
+            <a href="index.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">Home</a>   
+            <a href="about.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">About us</a>            
+            <a href="xss.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🪳 XSS-checker</a>
+            <a href="phishing.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out"> 📬 Email-Phishing</a>   
+            <a href="pass.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🛡️ Password-Strength</a>   
+            <a href="contact.html" class="text-red-600 p-4 px-3 sm:px-7 shadow-lg transition duration-300 ease-in-out">📞 Contact us</a>   
+          </div>
+        </div>   
+      </div>
+
+  <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
+
+<!-- Contact us form -->
+<center>              
+  <div class="xl:w-8/12" style="margin-top: 65px;">
+    <div class="block bg-white shadow-xl rounded-lg">
+      <div class="lg:flex lg:flex-wrap g-0">
+        <div class="lg:w-6/12 px-4 md:px-0">
+          <div class="md:p-12 md:mx-6">
+
+            <div class="text-center">
+              <p style="font-size: 29px; font-family: 'Kanit', sans-serif;">📞Contact us for any queries</p>
+            </div>
+
+            <form action="/contact" method="post">
+                <br>
+
+                <hr class="mt-2 mb-6">
+
+              <div class="mb-6">
+                <input
+                  type="text"
+                  class="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="name"
+                  name="name"
+                  style=" border-radius: 25px;"
+                  placeholder="Full name" required
+                />
+              </div>
+
+              <div class="mb-6">
+                <input
+                  type="email"
+                  class="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus: focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="email"
+                  name="email"
+                  style=" border-radius: 25px;"
+                  placeholder="E-mail" required
+                />
+              </div>
+              <hr class="mt-2 mb-6">
+
+              <div class="mb-4">
+                <textarea
+                id = "message"
+                name = "message"
+                  class="p-3 form-control border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus: focus:bg-white focus:border-blue-600 focus:outline-none"                           
+                  cols="43" 
+                  rows="10"
+                  style="resize: none; border-radius: 20px; margin-right: 25px;"
+                  placeholder="Enter your message or queries here :" 
+                required></textarea>
+              </div>
+
+
+              <div class="text-center pt-1 pb-1">                              
+                <button class="w-56 mt-3 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium 
+                          text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700
+                          hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none 
+                          focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150
+                          ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                    href="/web-app/public/index.html">submit                                 
+                 </button> <br><br>                                                                                                                                          
+              </div>
+
+            </form>
+            
+          </div>
+        </div>
+
+        <div
+          class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none"
+          style="
+            background: linear-gradient(to right, #3A1078, #4E31AA, #3795BD);
+          "
+          >
+          <div class="text-center mx-auto">
+            <a href="index.html">
+            <img
+              class="mx-auto hover:shadow-lg transition duration-300 ease-in-out"
+              src="images/web_kavach_logo.png"
+              alt="logo"
+              width="265px"
+            />
+            </a>
+            <p style="font-size: 20px; font-family: 'Sora', sans-serif;" class="mt-12 text-white">keeping you <span style="font-size: 27px; font-family: 'Ubuntu', sans-serif; text-decoration: underline;">SECURED</span></p>
+
+
+
+          </div>
+          <br>
+
+          <!-- <div class="text-white px-8 py-6 md:p-12 md:mx-6">
+
+            <h4 class="text-2xl font-semibold mb-6">Kill Fire Before It Kills You</h4>
+            <p class="text-xl">
+              Arista Solutions is a distributor of wide range of fire protection equipments, such as Fire Hoses, Couplings, Fire hydrant and sprinkler systems, Fire Pumps, etc and related ancillaries.
+            </p>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+  </div>        
+</center>
+<!-- Contact us form ends -->
+
+
+<!-- Contact company page -->
+<div class="container my-24 px-6 mx-auto">
+<!-- Section: Design Block -->
+<section class="mb-32 text-gray-800">
+<style>
+.map-container-2 {
+height: 500px;
+}
+</style>
+<div class="block rounded-lg shadow-lg bg-white bg-gradient-to-r from-red-50 to-yellow-300">
+<div class="flex flex-wrap items-center">
+<div class="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
+  <div class="map-container-2 w-full">
+    <iframe src="https://maps.google.com/maps?q=Dahanukarwadi&t=&z=15&ie=UTF8&iwloc=&output=embed" class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+<div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
+  <div class="flex flex-wrap pt-12 lg:pt-0">
+    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
+      <div class="flex items-start">
+        <div class="shrink-0">
+          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+            <img src="images/customer-service.png" alt="">
+          </div>
+        </div>
+        <div class="grow ml-6">
+          <p class="font-bold mb-1">Contact support staff</p>
+          <p class="text-gray-500">arista_support@gmail.com</p>
+          <p class="text-gray-500">+91 777-777-7777</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
+      <div class="flex items-start">
+        <div class="shrink-0">
+          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+            <img src="images/rupee.png" alt="">
+          </div>
+        </div>
+        <div class="grow ml-6">
+          <p class="font-bold mb-1">Products sales questions</p>
+          <p class="text-gray-500">arista_sales@gmail.com</p>
+          <p class="text-gray-500">+91 755-755-7755</p>
+        </div>
+      </div>
+    </div>
+    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
+      <div class="flex align-start">
+        <div class="shrink-0">
+          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+            <img src="images/newsletter.png" alt="">
+          </div>
+        </div>
+        <div class="grow ml-6">
+          <p class="font-bold mb-1">Subscribe to the news letter</p>
+          <p class="text-gray-500">arista_solutions@gmail.com</p>                  
+        </div>
+      </div>
+    </div>
+    <div class="mb-12 lg:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 lg:w-full xl:w-6/12 px-3 md:px-6 xl:px-12">
+      <div class="flex align-start">
+        <div class="shrink-0">
+          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+            <img src="images/location.png" alt="">
+          </div>
+        </div>
+        <div class="grow ml-6">
+          <p class="font-bold mb-1">Address</p>
+          <p class="text-gray-500">302, Sai Shanti Apartments,</p>
+          <p class="text-gray-500">Dahanukarwadi, Kandivali West,</p>
+          <p class="text-gray-500">Mumbai - 400067</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Contact company page ends -->
+
+
+
+
+<!--- Footer starts --->    
+<footer class="mt-6 bg-gray-900 text-white py-4">
+  <div class="container mx-auto px-4">
+      <p class="text-center">&copy; 2024 Web-Kavach. All rights reserved.</p>
+  </div>
+</footer>
+<!--- Footer ends --->
+
+</body>
+</html>
