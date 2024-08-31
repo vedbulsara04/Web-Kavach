@@ -28,7 +28,7 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
 
 ---
 
-## About the Developers :
+## About the Developers:
 
 ` Atharv Rokade `
   >- Github profile : [@atharv834](https://github.com/Atharv834)
