@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-Kavach - Secure Your Website</title>
+    <title>Web-Kavach - Secure Yourself</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,15 +31,16 @@
           <div class="mx-12 px-5 py-5">
             <a href="index.html" class="text-red-600 p-4 px-3 sm:px-7 shadow-lg transition duration-300 ease-in-out">Home</a>   
             <a href="about.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">About us</a>            
-            <a href="xss.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🪳 XSS-checker</a>
-            <a href="phishing.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out"> 📬 Email-Phishing</a>   
-            <a href="pass.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🛡️ Password-Strength</a>   
+            <a href="breach-scan.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">⚠️ Breach-Scan</a>
+            <a href="pass-strength.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🛡️ Pass-Strength</a>   
+            <a href="phish-guard.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out"> 📬 Phish-Guard</a>   
+            <a href="stegano.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🔍 Steganography</a>   
             <a href="contact.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">📞 Contact us</a>   
           </div>
         </div>   
       </div>
 
-  <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
+    <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
     <main class="container mx-auto px-10 py-10">
         <h1 class="text-4xl font-bold mb-4 font-playfair mt-16" style="font-family: Playfair Display;">Secure yourself now, with Web-Kavach🛡️</h1>
         <p class="mb-20 text-lg text-gray-600 mb-8 mt-8" style="font-family: Kanit, sans-serif;">This is a comprehensive project dedicated to offering <u>robust security services</u>  to its users. <br>
@@ -49,21 +51,38 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-xl font-bold mb-4">🪳 Cross-Site-Scripting (XSS) detection</h2>
-                <p class="">Cross-site scripting (XSS) is a security vulnerability that allows attackers to 
-                   inject malicious scripts into web-apps. <br><br> These scripts are typically executed 
-                   in the user's browser, enabling the attacker to perform actions such as stealing cookies, 
-                   defacing websites, or redirecting users to malicious sites.</p>
+                <h2 class="text-xl font-bold mb-4">⚠️ Breach-Scan</h2>
+                <p class="">Breach-Scan is a dedicated service on our website that checks your password 
+                    against the latest database of breached passwords. <br><br>If your input password matches any known breaches, 
+                    Breach-Scan will notify you, indicating that your password has been compromised. <br><br> 
+                    This allows you to take immediate action and change your password, helping you 
+                    maintain better security hygiene and avoid using vulnerable passwords.</p>
             </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">🔑 Password strength analyzer</h2>
+                <p>
+                    Our Password Strength Analyzer helps you create a secure password by evaluating its strength against essential security criteria. <br><br>
+                    It ensures that your password meets minimum standards, guiding you to use a combination of different characters and sufficient length. <br><br>
+                    This way, you can confidently protect your accounts with a strong password that’s harder to guess or compromise.</p>
+            </div>
+
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-xl font-bold mb-4">📬 Email-Phishing detection</h2>
                 <p>Email phishing is a cyber attack where attackers send deceptive emails to trick recipients into revealing sensitive information, such as passwords or financial details. 
-                    <br> <br>These emails often mimic legitimate organizations or contacts and create a sense of urgency to prompt the recipient to click on malicious links or download harmful attachments.</p>
+                    <br> <br>
+                    Our service helps protect you from malicious emails designed to steal your personal information. <br><br>
+                    It scans incoming emails for suspicious elements, such as fake links and deceptive content, to identify potential phishing attempts.</p>
             </div>
+
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-xl font-bold mb-4">🔑 Password strength analyzer</h2>
-                <p>Password strength refers to how resistant a password is to being guessed or cracked by attackers. <br><br> A strong password typically includes a mix of uppercase and lowercase letters, numbers, and special characters. <br>It should also be at least 12 characters long and avoid common words or easily guessable patterns.</p>
+                <p>
+                    Our Password Strength Analyzer helps you create a secure password by evaluating its strength against essential security criteria. <br><br>
+                    It ensures that your password meets minimum standards, guiding you to use a combination of different characters and sufficient length. <br><br>
+                    This way, you can confidently protect your accounts with a strong password that’s harder to guess or compromise.</p>
             </div>
+
         </div>
     </main>
 
