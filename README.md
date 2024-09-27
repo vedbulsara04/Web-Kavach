@@ -17,8 +17,10 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
 
 **Web-Kavach** aims to provide a robust security solution for web applications by offering features such as:
 
-- **Email Phishing Detection:** Using ML algorithms to identify email phishing attempts.
-- **Vulnerability Scanning:** Tools to scan and report XSS and sensitive information disclosure(e.g. API key, etc.) in web applications.
+- **Phish-Guard:** Using ML algorithms to identify email phishing attempts.
+- **Pass-Strength:** You can use to check if your password is actually strong!
+- **Breach-Scan:** You can get to know if your data had ever been breached.
+- **Steganography:** You can decode hidden messages inside images, which even you didn't know existed!
 
 ## Features
 
