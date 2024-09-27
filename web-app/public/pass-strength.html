@@ -16,29 +16,40 @@
     <!------------------------------------------------------------------- Navbar starts --------------------------------------------------------------- -->
     <div class="container mx-auto mt-5 px-5 py-5">
       <div class="ml-8 md:flex md:flex-row md:justify-between text-center text-sm sm:text-base">
-        <div class="flex flex-row justify-center">
-          <div class="">
-              <a href="index.html">
-                  <img
-                    class="shadow-xl mx-auto w-56 hover:shadow-2xl transition duration-300 ease-in-out rounded-lg"
-                    src="images/web_kavach_logo.png"
-                    alt="logo"
-                  />
-              </a>
-          </div>            
-        </div>
-        <div class="mx-12 px-5 py-5">
-          <a href="index.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">Home</a>   
-          <a href="about.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">About us</a>            
-          <a href="breach-scan.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">⚠️ Breach-Scan</a>
-          <a href="pass-strength.html" class="text-red-600 p-4 px-3 sm:px-7 shadow-lg transition duration-300 ease-in-out">🛡️ Pass-Strength</a>   
-          <a href="phish-guard.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out"> 📬 Phish-Guard</a>   
-          <a href="stegano.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">🔍 Steganography</a>   
-          <a href="contact.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out">📞 Contact us</a>   
-        </div>
+      <div class="flex flex-row justify-center">
+        <div class="">
+          <a href="index.html">
+            <img
+            class="shadow-xl mx-auto w-56 hover:shadow-2xl transition duration-300 ease-in-out rounded-lg"
+            src="images/web_kavach_logo.png"
+            alt="logo"
+            />
+          </a>
+        </div>            
+      </div>
+      <div class="mx-12 px-5 py-5">
+        <a href="index.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Visit our homepage">Home</a>   
+        <a href="about.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Get to Know Us">About us</a>            
+        <a href="breach-scan.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Check out if your data has ever been breached!">⚠️ Breach-Scan</a>
+        <a href="pass-strength.html" class="text-red-600 p-4 px-3 sm:px-7 shadow-lg transition duration-300 ease-in-out rounded-lg" title="Check if your password is actually strong">🛡️ Pass-Strength</a>   
+        <a href="phish-guard.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Protect yourself from email phishing"> 📬 Phish-Guard</a>   
+        <a href="stegano.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Let's decode hidden messages inside images">🔍 Steganography</a>   
+        <a href="contact.html" class="text-gray-600 hover:text-red-600 p-4 px-3 sm:px-5 hover:shadow-lg transition duration-300 ease-in-out rounded-lg" title="Have Questions? Contact Us">📞 Contact us</a>   
+      </div>
       </div>   
     </div>
   <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
+
+  <!------------------------------------------------------------------- Main content starts --------------------------------------------------------------- -->
+
+    <div class="flex items-center justify-center min-h-screen bg-white">
+      <div class="w-1/2 p-8 rounded-lg text-center">
+      <h1 class="text-2xl font-bold mb-4">Password Strength Checker</h1>
+      <input type="password" id="passwordInput" placeholder="Enter your password" class="w-full p-2 border-2 border-gray-300 rounded focus:outline-none focus:border-indigo-500" />
+      <button onclick="checkPasswordStrength()" class="mt-4 py-2 px-4 bg-indigo-500 text-white rounded hover:bg-indigo-600">Check Password Strength</button>
+      <div id="strengthOutput" class="mt-4 text-lg font-bold"></div>
+      </div>
+    </div>
 
 <!--- Footer starts --->    
 <footer class="mt-6 bg-gray-900 text-white py-4">
@@ -48,6 +59,56 @@
 </footer>
 <!--- Footer ends --->
 
+  <script>
+    function checkPasswordStrength() {
+        const password = document.getElementById('passwordInput').value;
+        const strengthOutput = document.getElementById('strengthOutput');
+
+        // Reset previous output style and content
+        strengthOutput.className = '';
+        strengthOutput.style.color = '';
+
+        // Regex patterns for checking different levels of password strength
+        const hasLowerCase = /[a-z]/;
+        const hasUpperCase = /[A-Z]/;
+        const hasNumber = /\d/;
+        const hasSpecialChar = /[!@#$%^&*]/;
+        const isLongEnough = /^.{8,}$/;
+
+        // Start by assuming it's a weak password
+        let suggestions = [];
+        let isWeak = true;
+
+        // Check if the password meets basic length requirement
+        if (!isLongEnough.test(password)) {
+            strengthOutput.textContent = "Password is too short. Must be at least 8 characters long.";
+            strengthOutput.style.color = "red";
+            return; // No need to check further if the password is too short
+        }
+
+        // Check what is missing for a stronger password
+        if (!hasLowerCase.test(password)) suggestions.push("lowercase letters");
+        if (!hasUpperCase.test(password)) suggestions.push("uppercase letters");
+        if (!hasNumber.test(password)) suggestions.push("numbers");
+        if (!hasSpecialChar.test(password)) suggestions.push("special characters");
+
+        // Strong password check (contains all required elements)
+        if (isLongEnough.test(password) && hasLowerCase.test(password) && hasUpperCase.test(password) && hasNumber.test(password) && hasSpecialChar.test(password)) {
+            strengthOutput.textContent = "Strength: High";
+            strengthOutput.style.color = "green";
+        } 
+        // Medium password (missing 1 or 2 requirements)
+        else if (suggestions.length <= 2) {
+            strengthOutput.textContent = "Strength: Medium. Consider adding " + suggestions.join(", ") + " to make your password stronger.";
+            strengthOutput.style.color = "orange";
+        } 
+        // Low password (missing 3 or more requirements)
+        else {
+            strengthOutput.textContent = "Strength: Low. Add " + suggestions.join(", ") + " to improve your password.";
+            strengthOutput.style.color = "red";
+        }
+    }
+  </script>
 </body>
 
 </html>
