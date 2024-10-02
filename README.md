@@ -1,6 +1,6 @@
-# Web-Kavach
+# Web-Kavach 🛡️
 
-Welcome to **Web-Kavach**! This repository is dedicated to the development and maintenance of a cutting-edge web security tool designed to enhance the protection of web applications against various cyber threats.
+Welcome to **Web-Kavach**! This repository is dedicated to the development and maintenance of a cutting-edge web security tool designed to enhance the protection of people against various cyber threats.
 
 ## This project is maintained by:
 
@@ -15,17 +15,19 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
 ---
 ## Project Overview
 
-**Web-Kavach** aims to provide a robust security solution for web applications by offering features such as:
+**Web-Kavach** aims to provide a robust security solution for people, by offering features such as:
 
-- **Email Phishing Detection:** Using ML algorithms to identify email phishing attempts.
-- **Vulnerability Scanning:** Tools to scan and report XSS and sensitive information disclosure(e.g. API key, etc.) in web applications.
+- **Breach-Scan:** We scan our latest database of breached passwords to check if your password has been compromised. 🔑🔓
+- **Pass-Strength:** A strong password is the first line of defense against cyber threats 🔒
+- **Phish-Guard:** We use ML algorithms to identify email phishing attempts 📧📬
+- **Steganography:** You can encode & decode hidden messages inside images 🕵🏻‍♂️
 
 ## Features
 
-- **Intuitive User Interface:** Easy-to-use interface for managing security settings.
-- **Customizable Alerts:** Set up alerts for different types of security events.
-- **Integration Support:** Seamless integration with various web platforms and services.
-
+- **Comprehensive Security:** Protects users from using breached passwords by scanning a large database of latest compromised paswords.
+- **Enhanced Password Protection:** Encourages stronger passwords to safeguard personal accounts.
+- **Phishing Prevention:** Shields users from phishing scams with advanced detection algorithms.
+- **Supports Confidential Communication:** Enables secure exchange of hidden messages through steganography.
 ---
 
 ## About the Developers:
