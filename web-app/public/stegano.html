@@ -11,7 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  </head>
 
 <body>
     <!------------------------------------------------------------------- Navbar starts --------------------------------------------------------------- -->
@@ -41,14 +44,213 @@
     </div>
   <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
 
-<!--- Footer starts --->    
-<footer class="mt-6 bg-gray-900 text-white py-4">
-  <div class="container mx-auto px-4">
-      <p class="text-center">&copy; 2024 Web-Kavach. All rights reserved.</p>
+  <main class="container mx-auto px-10 py-10">
+    <h1 class="text-4xl font-bold mb-4 font-playfair mt-16" style="font-family: Playfair Display;">In the pixels lies the unseen, <br> a world of <u>secrets concealed</u> beneath the visible 🔐</h1>
+    <p class="mb-20 text-lg text-gray-600 mb-8 mt-8" style="font-family: Kanit, sans-serif;">When images speak in whispers, steganography ensures only the right ears can hear. <br>Hide your secrets in plain sight! With image steganography, securely embed confidential <br>messages within everyday pictures— keeping your data invisible, yet fully protected</p>
+    <div class="">
+        <img src="images/stegano.png" width="30%" style="border-radius: 30px; margin-top: -340px; margin-left: 900px;" alt="" class="">
+    </div>
+  </main>
+
+  <div class="container mx-auto p-4">
+    <div class="flex">
+      <!-- Encode Section -->
+      <div class="w-1/2 p-4">
+        <h2 class="text-2xl font-bold mb-4" style="font-family: Playwrite DE Grund, cursive;">🔒 Encode your message</h2>
+        <br>
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="encode-image" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Upload an image to encode:
+          </label>
+          <input type="file" id="encode-image" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+        </div>
+  
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 font-bold mb-2" for="encode-message">
+            Message to encode:
+          </label>
+          <textarea id="encode-message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="Type your message here"></textarea>
+        </div>
+  
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="encode-password" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Password to encrypt the message:
+          </label>
+          <input type="password" id="encode-password" placeholder="Type your password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+  
+        <div class="border border-gray-300 p-4 rounded-lg">
+          <button id="encode-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Encode message
+          </button>
+        </div>
+      </div>
+  
+      <!-- Decode Section -->
+      <div class="w-1/2 p-4">
+        <h2 class="text-2xl font-bold mb-4" style="font-family: Playwrite DE Grund, cursive;">🔓 Decode the message</h2>
+        <br>
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="decode-image" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Upload an image to decode:
+          </label>
+          <input type="file" id="decode-image" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+        </div>
+  
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="decode-password" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Your password to decrypt the message:
+          </label>
+          <input type="password" id="decode-password" placeholder="Type your password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+  
+        <div class="border border-gray-300 p-4 rounded-lg">
+          <button id="decode-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Decode message
+          </button>
+        </div> <br>
+  
+        <div class="mb-4 border border-gray-300 p-4 rounded-lg" style="font-family: Arsenal, system-ui; font-size: medium;">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="decoded-message" style="font-family: Arsenal, system-ui; font-size: medium;">
+            Decoded Message:
+          </label>
+          <textarea id="decoded-message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="The decoded message will appear here"></textarea>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
-<!--- Footer ends --->
+  
+  <!--- Footer starts --->    
+  <footer class="mt-6 bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-4">
+        <p class="text-center">&copy; 2024 Web-Kavach. All rights reserved.</p>
+    </div>
+  </footer>
+  <!--- Footer ends --->
+  
+  <script>
+document.getElementById('encode-button').addEventListener('click', encodeMessage);
+document.getElementById('decode-button').addEventListener('click', decodeMessage);
 
-</body>
+function xorEncryptDecrypt(message, password) {
+  const messageChars = message.split('');
+  const passwordChars = password.split('');
+  return messageChars.map((char, index) => {
+    return String.fromCharCode(char.charCodeAt(0) ^ passwordChars[index % passwordChars.length].charCodeAt(0));
+  }).join('');
+}
 
-</html>
+function encodeMessage() {
+  const fileInput = document.getElementById('encode-image');
+  const message = document.getElementById('encode-message').value;
+  const password = document.getElementById('encode-password').value;
+
+  if (fileInput.files.length === 0) {
+    alert('Please select an image file to encode.');
+    return;
+  }
+
+  if (!message) {
+    alert('Please enter a message to encode.');
+    return;
+  }
+
+  if (!password) {
+    alert('Please enter a password to encrypt the message.');
+    return;
+  }
+
+  const encryptedMessage = xorEncryptDecrypt(message, password);
+  const messageLength = encryptedMessage.length;
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+    const img = new Image();
+    img.src = event.target.result;
+
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      // Encode message length into the first 4 pixels
+      data[0] = messageLength & 0xFF;
+      data[4] = (messageLength >> 8) & 0xFF;
+      data[8] = (messageLength >> 16) & 0xFF;
+      data[12] = (messageLength >> 24) & 0xFF;
+
+      // Encode message into image data starting from the 5th pixel
+      for (let i = 0; i < encryptedMessage.length; i++) {
+        data[(i + 4) * 4] = encryptedMessage.charCodeAt(i);
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      const encodedImage = canvas.toDataURL();
+
+      // Download the encoded image
+      const link = document.createElement('a');
+      link.href = encodedImage;
+      link.download = 'encoded-image.png';
+      link.click();
+    };
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function decodeMessage() {
+  const fileInput = document.getElementById('decode-image');
+  const password = document.getElementById('decode-password').value;
+
+  if (fileInput.files.length === 0) {
+    alert('Please select an image file to decode.');
+    return;
+  }
+
+  if (!password) {
+    alert('Please enter a password to decrypt the message.');
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+    const img = new Image();
+    img.src = event.target.result;
+
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      // Decode message length from the first 4 pixels
+      const messageLength = data[0] | (data[4] << 8) | (data[8] << 16) | (data[12] << 24);
+
+      let encryptedMessage = '';
+      for (let i = 0; i < messageLength; i++) {
+        encryptedMessage += String.fromCharCode(data[(i + 4) * 4]);
+      }
+
+      const decodedMessage = xorEncryptDecrypt(encryptedMessage, password);
+      document.getElementById('decoded-message').value = decodedMessage;
+    };
+  };
+
+  reader.readAsDataURL(file);
+}
+  </script>
+  
+  </body>
+  </html>
