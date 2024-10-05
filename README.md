@@ -1,5 +1,4 @@
 # Web-Kavach  🛡️
- parth
  
 Welcome to **Web-Kavach**! This repository is dedicated to the development and maintenance of a cutting-edge web security tool designed to enhance the protection of people against various cyber threats.
 
