@@ -140,6 +140,14 @@ function xorEncryptDecrypt(message, password) {
   }).join('');
 }
 
+function calculateChecksum(message) {
+  let checksum = 0;
+  for (let i = 0; i < message.length; i++) {
+    checksum += message.charCodeAt(i);
+  }
+  return checksum & 0xFFFF; // Return a 16-bit checksum
+}
+
 function encodeMessage() {
   const fileInput = document.getElementById('encode-image');
   const message = document.getElementById('encode-message').value;
@@ -162,6 +170,7 @@ function encodeMessage() {
 
   const encryptedMessage = xorEncryptDecrypt(message, password);
   const messageLength = encryptedMessage.length;
+  const checksum = calculateChecksum(message);
   const file = fileInput.files[0];
   const reader = new FileReader();
 
@@ -185,9 +194,13 @@ function encodeMessage() {
       data[8] = (messageLength >> 16) & 0xFF;
       data[12] = (messageLength >> 24) & 0xFF;
 
-      // Encode message into image data starting from the 5th pixel
+      // Encode checksum into the next 2 pixels
+      data[16] = checksum & 0xFF;
+      data[20] = (checksum >> 8) & 0xFF;
+
+      // Encode message into image data starting from the 7th pixel
       for (let i = 0; i < encryptedMessage.length; i++) {
-        data[(i + 4) * 4] = encryptedMessage.charCodeAt(i);
+        data[(i + 6) * 4] = encryptedMessage.charCodeAt(i);
       }
 
       ctx.putImageData(imageData, 0, 0);
@@ -238,19 +251,29 @@ function decodeMessage() {
       // Decode message length from the first 4 pixels
       const messageLength = data[0] | (data[4] << 8) | (data[8] << 16) | (data[12] << 24);
 
+      // Decode checksum from the next 2 pixels
+      const checksum = data[16] | (data[20] << 8);
+
       let encryptedMessage = '';
       for (let i = 0; i < messageLength; i++) {
-        encryptedMessage += String.fromCharCode(data[(i + 4) * 4]);
+        encryptedMessage += String.fromCharCode(data[(i + 6) * 4]);
       }
 
       const decodedMessage = xorEncryptDecrypt(encryptedMessage, password);
+
+      // Validate checksum
+      if (calculateChecksum(decodedMessage) !== checksum) {
+        alert('Incorrect password or corrupted message.');
+        return;
+      }
+
       document.getElementById('decoded-message').value = decodedMessage;
     };
   };
 
   reader.readAsDataURL(file);
 }
-  </script>
+</script>
   
-  </body>
-  </html>
+</body>
+</html>
