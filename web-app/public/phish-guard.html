@@ -40,7 +40,45 @@
       </div>   
     </div>
   <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Email Phishing Detection</h1>
+    <form id="emailForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">
+                Email Subject
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" id="subject" type="text" placeholder="Enter email subject">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
+                Email Body
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" id="body" rows="5" placeholder="Enter email body"></textarea>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button" onclick="sendEmailData()">
+            Detect Phishing
+        </button>
+    </form>
+    <div id="result" class="text-xl"></div>
+</div>
 
+<script>
+    async function sendEmailData() {
+        const subject = document.getElementById('subject').value;
+        const body = document.getElementById('body').value;
+
+        const response = await fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ subject, body })
+        });
+
+        const result = await response.json();
+        document.getElementById('result').textContent = `${result.prediction}.`;
+    }
+</script>
 <!--- Footer starts --->    
 <footer class="mt-6 bg-gray-900 text-white py-4">
   <div class="container mx-auto px-4">
