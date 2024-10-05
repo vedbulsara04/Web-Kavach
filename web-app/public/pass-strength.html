@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-Kavach - Secure Your Website</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,74 +42,87 @@
   <!------------------------------------------------------------------- Navbar ends --------------------------------------------------------------- -->
 
   <!------------------------------------------------------------------- Main content starts --------------------------------------------------------------- -->
-
-    <div class="flex items-center justify-center min-h-screen bg-white">
-      <div class="w-1/2 p-8 rounded-lg text-center">
-      <h1 class="text-2xl font-bold mb-4">Password Strength Checker</h1>
-      <input type="password" id="passwordInput" placeholder="Enter your password" class="w-full p-2 border-2 border-gray-300 rounded focus:outline-none focus:border-indigo-500" />
-      <button onclick="checkPasswordStrength()" class="mt-4 py-2 px-4 bg-indigo-500 text-white rounded hover:bg-indigo-600">Check Password Strength</button>
-      <div id="strengthOutput" class="mt-4 text-lg font-bold"></div>
-      </div>
+  <main class="container mx-auto px-10 py-10">
+    <h1 class="text-4xl font-bold mb-4 font-playfair mt-16" style="font-family: Playfair Display;">A <u>strong password</u> is the first line of defense <br>against cyber threats 🔒</h1>
+    <p class="mb-20 text-lg text-gray-600 mb-8 mt-8" style="font-family: Kanit, sans-serif;">A strong password is your first defense against cyber threats, and with our password strength checker, <br>you can easily determine how secure your passwords are. Protect your sensitive data by verifying <br> the strength of your passwords, ensuring they meet the highest security standards. <br></p>
+    <div class="">
+        <img src="images/pass_strength.png" width="30%" style="border-radius: 30px; margin-top: -340px; margin-left: 900px;" alt="" class="">
     </div>
-
-<!--- Footer starts --->    
-<footer class="mt-6 bg-gray-900 text-white py-4">
-  <div class="container mx-auto px-4">
-      <p class="text-center">&copy; 2024 Web-Kavach. All rights reserved.</p>
-  </div>
-</footer>
-<!--- Footer ends --->
-
+  
+    <div class="mt-20 flex justify-center bg-white mb-24">
+        <div class="w-1/2 p-8 rounded-lg text-center">
+        <h1 class="text-3xl font-bold mb-6" style="font-family: Playfair Display;">Password Strength Checker</h1>
+        <div class="relative">
+          <input type="password" id="passwordInput" placeholder="Enter your password" class="w-full p-2 border-2 border-gray-300 rounded focus:outline-none focus:border-indigo-500" />
+          <button type="button" onclick="togglePasswordVisibility()" class="absolute right-2 top-2 text-gray-600">
+            👁️
+          </button>
+        </div>
+        <button onclick="checkPasswordStrength()" class="mb-6 mt-6 py-2 px-4 bg-indigo-500 text-white rounded hover:bg-indigo-600">Check Password Strength</button>
+        <div id="strengthOutput" class="mt-4 text-2xl font-bold"></div>
+        </div>
+    </div>
+  </main>
+  
+  <!--- Footer starts --->    
+  <footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-4">
+        <p class="text-center">&copy; 2024 Web-Kavach. All rights reserved.</p>
+    </div>
+  </footer>
+  <!--- Footer ends --->
+  
   <script>
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('passwordInput');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+    }
+  
     function checkPasswordStrength() {
-        const password = document.getElementById('passwordInput').value;
-        const strengthOutput = document.getElementById('strengthOutput');
-
-        // Reset previous output style and content
-        strengthOutput.className = '';
-        strengthOutput.style.color = '';
-
-        // Regex patterns for checking different levels of password strength
-        const hasLowerCase = /[a-z]/;
-        const hasUpperCase = /[A-Z]/;
-        const hasNumber = /\d/;
-        const hasSpecialChar = /[!@#$%^&*]/;
-        const isLongEnough = /^.{8,}$/;
-
-        // Start by assuming it's a weak password
-        let suggestions = [];
-        let isWeak = true;
-
-        // Check if the password meets basic length requirement
-        if (!isLongEnough.test(password)) {
-            strengthOutput.textContent = "Password is too short. Must be at least 8 characters long.";
-            strengthOutput.style.color = "red";
-            return; // No need to check further if the password is too short
-        }
-
-        // Check what is missing for a stronger password
-        if (!hasLowerCase.test(password)) suggestions.push("lowercase letters");
-        if (!hasUpperCase.test(password)) suggestions.push("uppercase letters");
-        if (!hasNumber.test(password)) suggestions.push("numbers");
-        if (!hasSpecialChar.test(password)) suggestions.push("special characters");
-
-        // Strong password check (contains all required elements)
-        if (isLongEnough.test(password) && hasLowerCase.test(password) && hasUpperCase.test(password) && hasNumber.test(password) && hasSpecialChar.test(password)) {
-            strengthOutput.textContent = "Strength: High";
-            strengthOutput.style.color = "green";
-        } 
-        // Medium password (missing 1 or 2 requirements)
-        else if (suggestions.length <= 2) {
-            strengthOutput.textContent = "Strength: Medium. Consider adding " + suggestions.join(", ") + " to make your password stronger.";
-            strengthOutput.style.color = "orange";
-        } 
-        // Low password (missing 3 or more requirements)
-        else {
-            strengthOutput.textContent = "Strength: Low. Add " + suggestions.join(", ") + " to improve your password.";
-            strengthOutput.style.color = "red";
-        }
+      const password = document.getElementById('passwordInput').value;
+      const strengthOutput = document.getElementById('strengthOutput');
+  
+      // Reset previous output style and content
+      strengthOutput.className = '';  
+      strengthOutput.style.color = '';
+  
+      // Regex patterns for checking different levels of password strength
+      const hasLowerCase = /[a-z]/;
+      const hasUpperCase = /[A-Z]/;
+      const hasNumber = /\d/;
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+  
+      // Example strength check logic
+      if (password.length < 8) {
+        strengthOutput.textContent = 'Password is too short. It should be at least 8 characters long ☹️';
+        strengthOutput.style.color = 'red';
+        strengthOutput.style.fontSize = '19px';
+      } else if (!hasLowerCase.test(password)) {
+        strengthOutput.textContent = 'Password should include at least one lowercase letter 😔';
+        strengthOutput.style.color = 'orange';
+        strengthOutput.style.fontSize = '19px';
+      } else if (!hasUpperCase.test(password)) {
+        strengthOutput.textContent = 'Password should include at least one uppercase letter 😥';
+        strengthOutput.style.color = 'orange';
+        strengthOutput.style.fontSize = '19px';
+      } else if (!hasNumber.test(password)) {
+        strengthOutput.textContent = 'Password should include at least one number 😖';
+        strengthOutput.style.color = 'orange';
+        strengthOutput.style.fontSize = '19px';
+      } else if (!hasSpecialChar.test(password)) {
+        strengthOutput.textContent = 'Password should include at least one special character 💡😊';
+        strengthOutput.style.color = 'orange';
+        strengthOutput.style.fontSize = '19px';
+      } else {
+        strengthOutput.textContent = 'Password is strong 💪🏻😀🛡️';
+        strengthOutput.style.color = 'green';
+        strengthOutput.style.fontSize = '19px';
+      }
     }
   </script>
-</body>
+  </body>
+  
+  </html>
 
 </html>
