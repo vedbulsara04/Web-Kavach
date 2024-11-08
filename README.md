@@ -4,11 +4,11 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
 
 ## This project is maintained by:
 
+> [@vedbulsara04](https://github.com/vedbulsara04)
+
 > [@atharv834](https://github.com/Atharv834)
 
 > [@parth812004](https://github.com/parth812004)
-
-> [@vedbulsara04](https://github.com/vedbulsara04)
 
 > [@codewith-vedant](https://github.com/Codewith-Vedant)
 
@@ -32,6 +32,11 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
 
 ## About the Developers:
 
+` Ved Bulsara `
+  >- Github profile : [@vedbulsara04](https://github.com/vedbulsara04)
+  >- LinkedIn : [Ved Bulsara](https://www.linkedin.com/in/vedbulsara04/)
+  >- E-mail : vedbulsara7@gmail.com
+
 ` Atharv Rokade `
   >- Github profile : [@atharv834](https://github.com/Atharv834)
   >- LinkedIn : [Atharv Rokade](https://www.linkedin.com/in/atharvrokade/)
@@ -41,11 +46,6 @@ Welcome to **Web-Kavach**! This repository is dedicated to the development and m
   >- Github profile : [@parth812004](https://github.com/parth812004)
   >- LinkedIn : [Parth Soni](https://www.linkedin.com/in/parth-soni8124/)
   >- E-mail : parth.rs@somaiya.edu
-
-` Ved Bulsara `
-  >- Github profile : [@vedbulsara04](https://github.com/vedbulsara04)
-  >- LinkedIn : [Ved Bulsara](https://www.linkedin.com/in/vedbulsara04/)
-  >- E-mail : vedbulsara7@gmail.com
 
 ` Vedant Pillai `
   >- Github profile : [@codewith-vedant](https://github.com/Codewith-Vedant)
